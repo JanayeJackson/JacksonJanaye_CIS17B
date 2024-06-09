@@ -1,0 +1,1 @@
+echo strlen("Hello World!");
