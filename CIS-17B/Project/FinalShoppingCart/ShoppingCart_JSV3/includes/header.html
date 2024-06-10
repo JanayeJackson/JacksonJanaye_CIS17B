@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head">
+	<title><?php echo $page_title; ?></title>	
+	<link rel="stylesheet" href="includes/style.css" type="text/css" media="screen" />
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+	<div id="header">
+		<h1>LEGO</h1>
+		<h2>Search for Your Next Set</h2>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="index.php">Home Page</a></li>
+			<li>
+                            <div id="dropdown">
+                            <button id="dropbtn">User
+                            <i id="fa fa-caret-down"></i>
+                            </button>
+                            <div id="dropdown-content">
+                                <a href="register.php">Register</a>
+                                <a href="Login/password.php">Change Password</a>
+                                <a href="Login/Shop/browse_catalog.php">Browse Catalog</a>
+                                <a href="Login/Shop/view_cart.php">View Cart</a>
+                            </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="dropdown">
+                            <button id="dropbtn">Admin
+                            <i id="fa fa-caret-down"></i>
+                            </button>
+                            <div id="dropdown-content">
+                                <a href="Login/admin/view_admin.php">View Admin</a>
+                                <a href="Login/admin/view_users.php">View User</a>
+                                <a href="Login/admin/Catalog/view_cat.php">View Catalog</a>
+                            </div>
+                            </div>
+                        </li>
+			<li><?php // Create a login/logout link:
+if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])) {
+	echo '<a href="Login/logout.php">Logout</a>';
+} else {
+	echo '<a href="Login/login.php">Login</a>';
+}
+?></li>
+		</ul>
+	</div>
+	<div id="content"><!-- Start of the page-specific content. -->
+<!-- Script 12.10 - header.html -->
